@@ -4,16 +4,33 @@ We are trying to create the perfect custom open tibia server.
 ### How Compile:
 [Windows Tutorial](https://github.com/mattyx14/otxserver/wiki/Compilling-on-Windows) - [Linux(Ubuntu) Tutorial](https://github.com/mattyx14/otxserver/wiki/Compiling-OTX2-on-Ubuntu)
 
-### Contacts:
-- <b>Matty(English & Spanish):</b><br>
-Facebook: https://www.facebook.com/Mattyx14/<br>
-E-mail: darkylive@live.com.mx<br>
-Whatsapp: +5213173832937<br><br>
+- Install-Package 
+boost
 
-- <b>Reason(English & Portuguese):</b><br>
-Discord: Reason#2913
+- Include package manually
+project/properties/C_C++/General/Additional include Direcotories/...
+mysql-connector-c/include
+lua/include
+mpir/include
+libxml2/include
+libiconv/include
 
-- <b>FeeTads(Portuguese):</b><br>
-E-mail: felps18.082@gmail.com<br>
-Whatsapp: +55 41 9 84036942<br>
-Discord: FeeTads#0246
+
+- Link lib file manually
+project/properties/Linker/General/Additional Library Directories/... 
+lua/lib
+mpir/lib
+sqlite3/lib
+libiconv/lib
+mysql-connector-c/lib
+openssl/lib
+libxml2/lib
+
+libboost_thread-vc143-mt-x32-1_84.lib  ??
+change build option according to boost configration x64
+
+change config.lua file
+input "sqldatabasename"
+
+create mysql database
+import "schemas/mysql.sql" file to database
